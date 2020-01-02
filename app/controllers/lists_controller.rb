@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   end
 
   def new 
-    @list = List.new(list_params)
+    @list = List.new
   end
 
   def edit 
@@ -43,8 +43,8 @@ class ListsController < ApplicationController
   end
 
   private
-    def list_params
-      params.require(:title).permit(:title)
-    end
+
+  def list_params
+    params.require(:title).permit(:title)
   end
 end
