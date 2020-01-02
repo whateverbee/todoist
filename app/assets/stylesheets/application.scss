@@ -12,4 +12,17 @@
  *
  */
  @import "bootstrap";
- @import "layout";
+
+ .navbar.bg-dark{
+  background-color: #2b8781 !important; /* needed to override bootstrap*/
+}
+
+.card {
+  border: 2px solid rgba(155, 155, 155, 0.175);
+  margin: 10px;
+  padding: 3px;
+}
+
+h1.card-title {
+  margin: 10px;
+}
