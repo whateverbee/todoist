@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_155255) do
+ActiveRecord::Schema.define(version: 2020_01_02_174833) do
 
   create_table "list_items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.boolean "is_completed"
   end
 
-  create_table "lists", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "lists" because of following StandardError
+#   Unknown type 'ListItem' for column 'list_items'
 
 end
