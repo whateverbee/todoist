@@ -1,8 +1,8 @@
 class ListItemsController < ApplicationController
-  def new 
-  end
-
   def create 
+    @list = List.find(params[:list_id])
+    @item = @list.list_items.create(item_params)
+    redirect_to list_path(@list)
   end
 
   def update 
@@ -10,6 +10,10 @@ class ListItemsController < ApplicationController
 
   def delete 
   end
-  
-  
+
+  private
+    def item_params
+      params.require(:title).permit(:title)
+    end
+  end
 end
