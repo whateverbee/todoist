@@ -29,6 +29,7 @@ gem 'bootstrap', '~> 4.4', '>= 4.4.1'
 gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 gem 'autoprefixer-rails', '~> 9.7', '>= 9.7.3'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
