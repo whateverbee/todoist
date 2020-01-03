@@ -6,4 +6,15 @@
     </div>
   </div>
 </div>
-<!-- next we do rails logic to show lists if you're logged in and lists exist. >
+<!-- next we do rails logic to show lists if you're logged in and lists exist. -->
+<div class="container">
+<% unless @list.count == 0 %>
+ <% @list.each do |list| %>
+  <%= render 'shared/list_card' %>
+<% else %>
+  <div class="card">
+    <div class="card text">
+      No lists to show. <a href="#">Create a new list</a>
+    </div>
+  </div>
+<% end %>
