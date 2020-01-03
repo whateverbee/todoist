@@ -1,3 +1,18 @@
-<p><%= list_item.content %></p>
-<%= link_to "Delete", list_list_item_path(@list, list_item.id), 
-method: :delete%>
+<div class="row clearfix">
+<% if list_item.completed? %>
+  <div class="completed list-item">
+    <p><%= list_item.content %></p>
+  <div>
+<% else %>
+  <div class="list-item">
+    <p><%= list_item.content %></p>
+  <div>
+<% end %>
+
+  <%= link_to "Delete", list_list_item_path(@list, list_item.id), 
+  method: :delete%>
+  <% unless list_item.completed? %>
+    <%= link_to "Mark as completed", complete_list_list_itempath(@list, list_item.id),
+    method: :patch%>
+  <% end %>
+</div>
