@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"><%= @list.title %></h1>
+    <div class="card-text">
+    <% unless @list.list_items.count == 0 %>
+      <ul class="list-group">
+        <% @list.list_items.each do |item| %>
+          <li class="list-group-item"><% item.title %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="card-text"> No items to show.</p>
+    <% end %>
+    <a href="#" class="card-link">Add item</a>
+    <a href="#" class="card-link">Archive list</a>
+    </div>
+  </div>
+</div>
