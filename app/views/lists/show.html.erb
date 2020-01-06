@@ -1,21 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-body">
+  <h2 class="card-title">
+    <%= @list.title %>
+  </h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @list.title %>
-</p>
+  <p class="card-text">
+    <%= @list.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @list.description %>
-</p>
+  <div id="list_items_wrapper">
+  <ul class='list-group'>
+  <%= render @list.list_items %>
+  </ul>
+  <br/>
+  <div id="form" class="form-group">
+    <%= render "list_items/form" %>
+  </div>
+  </div>
 
-<div id="list_items_wrapper">
- <%= render @list.list_items %>
- <div id="form">
-  <%= render "list_items/form" %>
- </div>
+  <%= link_to 'Edit', edit_list_path(@list) %> |
+  <%= link_to 'Back', lists_path %>
+  </div>
 </div>
-
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
