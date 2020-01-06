@@ -20,6 +20,7 @@ class ListItemsController < ApplicationController
   def complete 
     @list_item.update_attribute(:completed_at, Time.now)
     redirect_to @list, notice: "${@list_item.content} completed."
+  end
 
   private
 

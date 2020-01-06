@@ -15,3 +15,25 @@
  */
  
  @import "bootstrap";
+ body {
+   font-family: "Lato";
+ }
+
+ .list-item-delete,
+ .list-item-complete {
+  margin: 0px 5px;
+ }
+
+ .completed {
+   text-decoration: line-through;
+ }
+
+ .form-group {
+   margin: 5px 0;;
+ }
+
+ .form-group input[type=submit] {
+   background-color: #343A40;
+   color: #ffffff;
+   border-radius: 3px;
+ }

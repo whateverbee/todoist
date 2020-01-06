@@ -1,18 +1,19 @@
-<div class="row clearfix">
-<% if list_item.completed? %>
-  <div class="completed list-item">
-    <p><%= list_item.content %></p>
-  <div>
-<% else %>
-  <div class="list-item">
-    <p><%= list_item.content %></p>
-  <div>
-<% end %>
-
-  <%= link_to "Delete", list_list_item_path(@list, list_item.id), 
-  method: :delete%>
-  <% unless list_item.completed? %>
-    <%= link_to "Mark as completed", complete_list_list_itempath(@list, list_item.id),
-    method: :patch%>
+<li class="list-group-item list-group-item-action d-flex justify-content-between <% if list_item.completed? %>list-group-item-secondary<% end %>">
+  <% if list_item.completed? %>
+    <p class="completed list-item p-0 m-0 flex-grow-1">
+      <span><%= list_item.content %></span>
+    </p>
+  <% else %>
+    <p class="list-item p-0 m-0 flex-grow-1">
+      <span><%= list_item.content %></span>
+    </p>
   <% end %>
-</div>
+
+  <span class="list-item-delete pull-right"><%= link_to "", list_list_item_path(@list, list_item.id), 
+  method: :delete, class: "fa fa-trash"%></span>
+  <% unless list_item.completed? %>
+    <span class="list-item-complete pull-right">
+    <%= link_to "", complete_list_list_item_path(@list, list_item.id),
+    method: :patch, class: "fa fa-check"%></span>
+  <% end %>
+</li>
